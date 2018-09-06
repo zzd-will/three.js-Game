@@ -3,6 +3,8 @@
 import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
 
+import {BLOCK} from './Gloable'
+
 //容纳Three.js的作图区域
 let threeArea;
 //场景，摄像机，以及WebGL渲染器
@@ -16,7 +18,7 @@ function addGeometry (scene) {
     //在底部添加一个平面
     let planeGeometry = new THREE.PlaneGeometry(100, 100, 1, 1);
     let planeMaterial = new THREE.MeshBasicMaterial({
-        color: 0x333333
+        color: 0x333333 
     });
     let plane = new THREE.Mesh(planeGeometry, planeMaterial);
     //设置平面角度
@@ -47,6 +49,9 @@ function addGeometry (scene) {
 function init () {
     //获得作图区域的DOM元素
     threeArea = document.getElementById("three-area");
+
+
+    console.log(BLOCK.radius);
 
     //创建场景
     scene = new THREE.Scene();
