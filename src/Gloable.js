@@ -1,3 +1,5 @@
+
+import * as THREE from 'three';
 export var COLORS = {
 	red: 0xCC463D,
 	pureRed: 0xff0000,
@@ -103,6 +105,7 @@ export var AUDIO  = {
 export var FRUSTUMSIZE  = window.innerHeight / window.innerWidth / 736 * 414 * 60;
 
 export var loader  = new THREE.TextureLoader();
+
 
 export var cylinder_shadow = new THREE.MeshBasicMaterial({ map: loader.load('res/cylinder_shadow.png'), transparent: true, alphaTest: 0.01 });
 export var desk_shadow  = new THREE.MeshBasicMaterial({ map: loader.load('res/desk_shadow.png'), transparent: true, alphaTest: 0.01 });

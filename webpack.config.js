@@ -10,7 +10,9 @@ module.exports = {
   //输出js文件
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: 'dist/'
+
   },
   
   module: {
@@ -32,7 +34,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|eot|ttf|otf|woff|woff2|svg|svgz)(\?.+)?$/,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        query:{
+          name:'url?limit=1024&name=res/[name].[ext]'  //这里img是存放打包后图片文件夹，结合publicPath来看就是dist/res文件夹中，后边接的是打包后图片的命名方式。
+        }
       }
     ]
   },

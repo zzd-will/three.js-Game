@@ -2,8 +2,7 @@
 
 import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
-
-import {BLOCK} from './Gloable'
+import * as G from './Gloable'
 
 //容纳Three.js的作图区域
 let threeArea;
@@ -12,13 +11,41 @@ let scene, camera, render;
 
 //向场景之中添加需展示的对象
 function addGeometry (scene) {
+
+    const path = require('path');
+    console.log( "pathpathpath " +path.join(__dirname, 'src', 'index'));
+
+    var scripts = document.getElementsByTagName("script")
+    var script = scripts[scripts.length - 1];
+   var  strJsPath = document.querySelector ? script.src : script.getAttribute("src", 4)//IE8直接.src
+    alert(strJsPath);//显示当前正在执行js文件的地址
+
+    
+
+    var err = G.loader.load('res/cylinder_shadow.png',function ( texture ) {
+        // do something with the texture
+        var material = new THREE.MeshBasicMaterial( {
+            map: texture
+         } );
+         console.log( "material" );
+    },
+    // Function called when download progresses
+    function ( xhr ) {
+        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+    },
+    // Function called when download errors
+    function ( xhr ) {
+        console.log( 'An error happened' + xhr.error);
+    });
+
+
     //添加坐标系
     let axes = new THREE.AxesHelper(50);
     scene.add(axes);
     //在底部添加一个平面
     let planeGeometry = new THREE.PlaneGeometry(100, 100, 1, 1);
     let planeMaterial = new THREE.MeshBasicMaterial({
-        color: 0x333333 
+        color: G.COLORS.blue 
     });
     let plane = new THREE.Mesh(planeGeometry, planeMaterial);
     //设置平面角度
@@ -51,7 +78,7 @@ function init () {
     threeArea = document.getElementById("three-area");
 
 
-    console.log(BLOCK.radius);
+    console.log(G.BLOCK.radius);
 
     //创建场景
     scene = new THREE.Scene();
