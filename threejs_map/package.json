@@ -1,0 +1,39 @@
+{
+  "name": "threejs-hex-map",
+  "version": "0.3.1",
+  "description": "A simple 3D hexagonal terrain map based on three.js.",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index",
+  "scripts": {
+    "start": "node server.js",
+    "build": "tsc && webpack",
+    "test": "echo \"No tests yet.\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Bunkerbewohner/threejs-hex-map.git"
+  },
+  "keywords": [
+    "webgl",
+    "threejs",
+    "typescript",
+    "hexagon",
+    "map",
+    "terrain"
+  ],
+  "author": "Mathias Kahl <mathias.kahl@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Bunkerbewohner/threejs-hex-map",
+  "dependencies": {
+    "three": "^0.84.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/three": "0.92.20",
+    "express": "^4.16.3",
+    "requirejs": "^2.3.6",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  }
+}

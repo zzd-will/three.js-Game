@@ -3,6 +3,9 @@
 import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
 import * as G from './Gloable'
+import * as Block from './Block'
+
+import {TweenAnimation} from './TweenAnimation'
 
 //容纳Three.js的作图区域
 let threeArea;
@@ -14,6 +17,9 @@ function addGeometry (scene) {
 
     const path = require('path');
     console.log( "pathpathpath " +path.join(__dirname, 'src', 'index'));
+
+    var testA = new TweenAnimation();
+    testA.test();
 
     var scripts = document.getElementsByTagName("script")
     var script = scripts[scripts.length - 1];

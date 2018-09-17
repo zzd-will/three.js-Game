@@ -1,5 +1,5 @@
 import * as G from './Gloable'
-
+import * as THREE from 'three';
 
 var biggerGeometry = new THREE.BoxGeometry(G.BLOCK.radius * 2 + 0.02, G.BLOCK.height + 0.04, G.BLOCK.radius * 2 + 0.02);
 var staticGeometry = new THREE.BoxGeometry(G.BLOCK.radius * 2, G.BLOCK.height, G.BLOCK.radius * 2);
